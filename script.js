@@ -59,7 +59,10 @@ function updateTotalPayable() {
 // Add event listeners
 document.getElementById('current-unit').addEventListener('input', updateUnitsConsumed);
 document.getElementById('previous-unit').addEventListener('input', updateUnitsConsumed);
-document.getElementById('electricity-duty').addEventListener('input', calculateElectricityCharges);
+document.getElementById('electricity-duty').addEventListener('input', () => {
+  const totalUnits = parseFloat(document.getElementById('total-unit').textContent) || 0;
+  calculateElectricityCharges(totalUnits);
+});
 document.getElementById('water-charges').addEventListener('input', updateTotalPayable);
 document.getElementById('house-rent-charges').addEventListener('input', updateTotalPayable);
 document.getElementById('other-charges').addEventListener('input', updateTotalPayable);
