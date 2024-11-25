@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.receipt-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row label {
+  flex: 1;
+  min-width: 120px;
+  font-size: 0.9rem;
+}
+
+.row input, .row span {
+  flex: 2;
+  min-width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9rem;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.total {
+  font-weight: bold;
+}
+
+.signature {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.signature span {
+  font-weight: bold;
+  border-top: 1px solid #000;
+  padding-top: 5px;
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  p {
+      font-size: 0.85rem;
+  }
+
+  .row {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .row label, .row input, .row span {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  table th, table td {
+      font-size: 0.85rem;
+      padding: 6px;
+  }
+
+  .signature span {
+      font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .receipt-container {
+      padding: 15px;
+  }
+
+  h1 {
+      font-size: 1.3rem;
+  }
+
+  p {
+      font-size: 0.8rem;
+  }
+
+  .row label {
+      font-size: 0.8rem;
+  }
+
+  .row input, .row span {
+      font-size: 0.8rem;
+  }
+
+  table th, table td {
+      font-size: 0.8rem;
+  }
+
+  .signature span {
+      font-size: 0.8rem;
+  }
+}
