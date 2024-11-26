@@ -83,7 +83,11 @@ document.getElementById('download-btn').addEventListener('click', function () {
   const fileName = `${tenantName}-${selectedDate}.png`; // Example: JohnDoe-2024-11-26.png
 
   // Use html2canvas to capture the receipt as an image
-  html2canvas(receipt).then(canvas => {
+  html2canvas(receipt, {
+    scale: 2, // Increase the scale for higher resolution
+    scrollX: 0, // Prevents including scroll offset
+    scrollY: 0,
+  }).then(canvas => {
     const link = document.createElement('a');
     link.download = fileName; // Dynamic file name
     link.href = canvas.toDataURL('image/png'); // Data URL of the canvas
