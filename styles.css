@@ -150,6 +150,29 @@ table th, table td {
   }
 }
 
+input {
+  width: 100%; /* Use full width on smaller screens */
+  box-sizing: border-box; /* Prevent padding/border from exceeding width */
+}
+
+#receipt {
+  width: 100%;
+  max-width: 600px; /* Limit max width for larger screens */
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+input {
+  padding: 8px; /* Add internal spacing */
+  margin-bottom: 10px; /* Space between fields */
+}
+
+#receipt {
+  padding: 20px; /* Add internal spacing to the entire receipt */
+  box-sizing: border-box;
+}
+
 /* input {
   width: calc(100% - 20px);
   padding: 8px;

@@ -87,6 +87,7 @@ document.getElementById('download-btn').addEventListener('click', function () {
     scale: 2, // Increase the scale for higher resolution
     scrollX: 0, // Prevents including scroll offset
     scrollY: 0,
+    useCORS: true // Avoid potential cross-origin issues
   }).then(canvas => {
     const link = document.createElement('a');
     link.download = fileName; // Dynamic file name
