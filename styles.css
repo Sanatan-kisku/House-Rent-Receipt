@@ -82,11 +82,11 @@ table th, table td {
 
 .signature span {
   font-weight: bold;
-  border-top: 1px solid #000;
-  padding-top: 5px;
+  /* border-top: 1px solid #000; */
+  padding-top: 70px;
   flex: 1;
   text-align: center;
-  margin: 10px;
+  margin: 20px;
 }
 
 /* Media Queries for Smaller Devices */
@@ -147,4 +147,27 @@ table th, table td {
   .signature span {
       font-size: 0.8rem;
   }
+}
+
+/* Download button */
+.download-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+.download-btn:active {
+  background-color: #003d7a;
 }

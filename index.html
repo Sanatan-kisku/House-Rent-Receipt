@@ -13,10 +13,14 @@
       <p>Ward No. 19, House No. 05, Dargadahi Golei, Raghunathpur, Baripada, Odisha 757001</p>
       <form id="rent-receipt-form">
           <div class="row">
+            <div class="name">
               <label>Tenant's Name:</label>
               <input type="text" id="tenant-name" placeholder="Enter tenant's name">
+            </div>
+            <div class="date">
               <label>Date:</label>
               <input type="date" id="date">
+            </div>
           </div>
           <p>*House Rent Receipt for the month of 
               <select id="month">
@@ -112,7 +116,7 @@
       </form>
   </div>
   </div>
-  <button id="download-btn">Download Receipt</button>
+  <button id="download-btn" class="download-btn">Download Receipt</button>
     
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
