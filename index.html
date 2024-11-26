@@ -19,24 +19,10 @@
             </div>
             <div class="date">
               <label>Date:</label>
-              <input type="date" id="date">
+              <input type="date" id="date" onchange="extractMonthYear()">
             </div>
           </div>
-          <p>*House Rent Receipt for the month of 
-              <select id="month">
-                  <option value="January">January</option>
-                  <option value="February">February</option>
-                  <option value="March">March</option>
-                  <option value="April">April</option>
-                  <option value="May">May</option>
-                  <option value="June">June</option>
-                  <option value="July">July</option>
-                  <option value="August">August</option>
-                  <option value="September">September</option>
-                  <option value="October">October</option>
-                  <option value="November">November</option>
-                  <option value="December">December</option>
-              </select>
+          <p>*House Rent Receipt for the month of <input type="text" id="month" name="month">
           </p>
           <div class="row">
               <label>Current Unit Reading:</label>
@@ -48,7 +34,7 @@
           </div>
           <div class="row">
               <label>Total Unit Consumed:</label>
-              <span id="total-unit">0</span>
+              <span id="total-unit"></span>
           </div>
           <table>
               <thead>
@@ -103,7 +89,7 @@
           </div>
           <div class="row total">
               <label>Total Amount Payable:</label>
-              <span id="total-payable">0</span>
+              <span id="total-payable"></span>
           </div>
           <div class="row">
               <label>Amount Paid by Tenant:</label>

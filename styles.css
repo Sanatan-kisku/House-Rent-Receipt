@@ -8,7 +8,7 @@ body {
 .receipt-container {
   width: 90%;
   max-width: 700px;
-  margin: 20px auto;
+  margin: 10px auto;
   background: #fff;
   padding: 20px;
   border: 1px solid #ccc;
@@ -25,8 +25,9 @@ h1 {
 p {
   text-align: center;
   font-size: 0.9rem;
-  margin: 5px 0;
+  margin: 5px ;
 }
+
 
 form {
   margin-top: 20px;
@@ -55,6 +56,7 @@ form {
   border-radius: 4px;
   font-size: 0.9rem;
 }
+
 
 table {
   width: 100%;
@@ -118,6 +120,10 @@ table th, table td {
   .signature span {
       font-size: 0.85rem;
   }
+
+  p input{
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -148,30 +154,12 @@ table th, table td {
   .signature span {
       font-size: 0.8rem;
   }
+
+  p input{
+    text-align: center;
+  }
 }
 
-input {
-  width: 100%; /* Use full width on smaller screens */
-  box-sizing: border-box; /* Prevent padding/border from exceeding width */
-}
-
-#receipt {
-  width: 100%;
-  max-width: 600px; /* Limit max width for larger screens */
-  margin: auto;
-  padding: 20px;
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
-}
-
-input {
-  padding: 8px; /* Add internal spacing */
-  margin-bottom: 10px; /* Space between fields */
-}
-
-#receipt {
-  padding: 20px; /* Add internal spacing to the entire receipt */
-  box-sizing: border-box;
-}
 
 /* input {
   width: calc(100% - 20px);
@@ -212,4 +200,8 @@ input {
 
 .download-btn:active {
   background-color: #003d7a;
+}
+
+#month {
+  border: none;
 }

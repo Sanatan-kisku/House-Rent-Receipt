@@ -1,3 +1,53 @@
+function extractMonthYear() {
+  // Get the value from the date input
+  const dateInput = document.getElementById('date').value;
+
+  // Ensure a date is selected
+  if (dateInput) {
+    // Create a Date object from the input
+    const date = new Date(dateInput);
+
+    // Get the full month name and year
+    const monthName = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+
+    // Format as "Month Year"
+    const formattedMonthYear = `${monthName} ${year}`;
+
+    // Set the value in the text input
+    document.getElementById('month').value = formattedMonthYear;
+  } else {
+    // Clear the text input if no date is selected
+    document.getElementById('month').value = '';
+    alert('Please select a date.');
+  }
+}
+
+// function getFormattedMonth() {
+//   // Get the month input value
+//   const monthInput = document.getElementById('month').value;
+
+//   // If there's a value selected
+//   if (monthInput) {
+//     // Split the input value into year and month
+//     const [year, month] = monthInput.split('-');
+
+//     // Create a Date object for the selected month and year
+//     const date = new Date(year, month - 1); // month is 0-indexed in JavaScript
+
+//     // Get the full month name
+//     const monthName = date.toLocaleString('default', { month: 'long' });
+
+//     // Format the output as "Month Year" (e.g., "November 2024")
+//     const formattedDate = `${monthName} ${year}`;
+
+//     // Display the result
+//     document.getElementById('month').textContent = formattedDate;
+//     console.log(formattedDate)
+//     console.log(document.getElementById('month').textContent)
+//   }
+// }
+
 // Update total units consumed
 function updateUnitsConsumed() {
   const currentReading = parseFloat(document.getElementById('current-unit').value) || 0;
@@ -9,6 +59,8 @@ function updateUnitsConsumed() {
 
   calculateElectricityCharges(totalUnits);
 }
+
+// console.log(document.getElementById('month').value)
 
 // Calculate electricity charges
 function calculateElectricityCharges(totalUnits) {
@@ -41,6 +93,7 @@ function calculateElectricityCharges(totalUnits) {
   // Update total electricity charges
   document.getElementById('electricity-charges').textContent = totalCost.toFixed(2);
 
+  // console.log(document.getElementById('month').value)
   updateTotalPayable();
 }
 
@@ -66,14 +119,17 @@ document.getElementById('electricity-duty').addEventListener('input', () => {
 document.getElementById('water-charges').addEventListener('input', updateTotalPayable);
 document.getElementById('house-rent-charges').addEventListener('input', updateTotalPayable);
 document.getElementById('other-charges').addEventListener('input', updateTotalPayable);
+// document.getElementById('month').addEventListener('input', extractMonthYear);
+// document.getElementById('month').addEventListener('input', getFormattedMonth)
 
 // Initialize
 updateUnitsConsumed();
-console.log(document.getElementById('tenant-name').innerText)
+// console.log(document.getElementById('tenant-name').innerText)
 
 //download receipt
 document.getElementById('download-btn').addEventListener('click', function () {
   const receipt = document.getElementById('receipt'); // The receipt to capture
+  // const month = document.getElementById('month').textContent;
 
   // Retrieve tenant's name and date from input fields
   const tenantName = document.getElementById('tenant-name').value.trim() || 'Tenant';
@@ -82,13 +138,45 @@ document.getElementById('download-btn').addEventListener('click', function () {
   // Format the file name
   const fileName = `${tenantName}-${selectedDate}.png`; // Example: JohnDoe-2024-11-26.png
 
-  // Use html2canvas to capture the receipt as an image
+  // Convert input fields to plain text for the image
+  const inputs = receipt.querySelectorAll('input');
+  const originalValues = [];
+
+  // console.log(document.getElementById('month').textContent)
+
+  inputs.forEach(input => {
+    const span = document.createElement('span');
+    span.textContent = input.value; // Replace input with its value
+    span.style.display = 'inline'; // Keep layout intact
+    // span.style.width = input.offsetWidth + 'px'; // Match width
+    // span.style.height = input.offsetHeight + 'px'; // Match height
+    // span.style.lineHeight = input.offsetHeight + 'px'; // Vertically center the text
+    span.style.fontSize = window.getComputedStyle(input).fontSize; // Match font size
+    span.style.fontFamily = window.getComputedStyle(input).fontFamily; // Match font
+    span.style.color = window.getComputedStyle(input).color; // Match color
+    span.style.outline = 'none';
+    span.style.border = "#fff";
+
+    originalValues.push({ input, span });
+    input.replaceWith(span);
+  })
+    ;
+
+
   html2canvas(receipt, {
     scale: 2, // Increase the scale for higher resolution
     scrollX: 0, // Prevents including scroll offset
     scrollY: 0,
+    width: receipt.offsetWidth,  // Ensure full width
+    height: receipt.offsetHeight,  // Ensure full height
     useCORS: true // Avoid potential cross-origin issues
   }).then(canvas => {
+
+    // Restore original input fields after capture
+    originalValues.forEach(({ input, span }) => {
+      span.replaceWith(input);
+    });
+
     const link = document.createElement('a');
     link.download = fileName; // Dynamic file name
     link.href = canvas.toDataURL('image/png'); // Data URL of the canvas
