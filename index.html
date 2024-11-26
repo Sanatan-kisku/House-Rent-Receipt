@@ -7,109 +7,114 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="receipt">
     <div class="receipt-container">
-        <h1>House Rent Receipt</h1>
-        <p>Ward No. 19, House No. 05, Dargadahi Golei, Raghunathpur, Baripada, Odisha 757001</p>
-        <form id="rent-receipt-form">
-            <div class="row">
-                <label>Tenant's Name:</label>
-                <input type="text" id="tenant-name" placeholder="Enter tenant's name">
-                <label>Date:</label>
-                <input type="date" id="date">
-            </div>
-            <p>*House Rent Receipt for the month of 
-                <select id="month">
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
-                </select>
-            </p>
-            <div class="row">
-                <label>Current Unit Reading:</label>
-                <input type="number" id="current-unit" value="">
-            </div>
-            <div class="row">
-                <label>Previous Unit Reading:</label>
-                <input type="number" id="previous-unit" value="">
-            </div>
-            <div class="row">
-                <label>Total Unit Consumed:</label>
-                <span id="total-unit">0</span>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Units Consumed</th>
-                        <th>Rates Per Unit</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody id="electricity-details">
-                    <tr>
-                        <td id="tier-1-units">0</td>
-                        <td>3</td>
-                        <td id="tier-1-total"></td>
-                    </tr>
-                    <tr>
-                        <td id="tier-2-units">0</td>
-                        <td>4.7</td>
-                        <td id="tier-2-total"></td>
-                    </tr>
-                    <tr>
-                        <td id="tier-3-units">0</td>
-                        <td>5.7</td>
-                        <td id="tier-3-total"></td>
-                    </tr>
-                    <tr>
-                        <td id="tier-4-units">0</td>
-                        <td>6.1</td>
-                        <td id="tier-4-total"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="row">
-                <label>Electricity Duty:</label>
-                <input type="number" id="electricity-duty" value="">
-            </div>
-            <div class="row">
-                <label>Total Electricity Charges:</label>
-                <span id="electricity-charges"></span>
-            </div>
-            <div class="row">
-                <label>Water Consumption Charges:</label>
-                <input type="number" id="water-charges" value="">
-            </div>
-            <div class="row">
-                <label>House Rent Charges:</label>
-                <input type="number" id="house-rent-charges" value="">
-            </div>
-            <div class="row">
-                <label>Other Charges / Deductions:</label>
-                <input type="number" id="other-charges" value="">
-            </div>
-            <div class="row total">
-                <label>Total Amount Payable:</label>
-                <span id="total-payable">0</span>
-            </div>
-            <div class="row">
-                <label>Amount Paid by Tenant:</label>
-                <input type="number" id="amount-paid">
-            </div>
-            <div class="row signature">
-                <span>Tenant's Signature</span>
-                <span>Owner's Signature</span>
-            </div>
-        </form>
-    </div>
+      <h1>House Rent Receipt</h1>
+      <p>Ward No. 19, House No. 05, Dargadahi Golei, Raghunathpur, Baripada, Odisha 757001</p>
+      <form id="rent-receipt-form">
+          <div class="row">
+              <label>Tenant's Name:</label>
+              <input type="text" id="tenant-name" placeholder="Enter tenant's name">
+              <label>Date:</label>
+              <input type="date" id="date">
+          </div>
+          <p>*House Rent Receipt for the month of 
+              <select id="month">
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+              </select>
+          </p>
+          <div class="row">
+              <label>Current Unit Reading:</label>
+              <input type="number" id="current-unit" value="">
+          </div>
+          <div class="row">
+              <label>Previous Unit Reading:</label>
+              <input type="number" id="previous-unit" value="">
+          </div>
+          <div class="row">
+              <label>Total Unit Consumed:</label>
+              <span id="total-unit">0</span>
+          </div>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Units Consumed</th>
+                      <th>Rates Per Unit</th>
+                      <th>Total</th>
+                  </tr>
+              </thead>
+              <tbody id="electricity-details">
+                  <tr>
+                      <td id="tier-1-units">0</td>
+                      <td>3</td>
+                      <td id="tier-1-total"></td>
+                  </tr>
+                  <tr>
+                      <td id="tier-2-units">0</td>
+                      <td>4.7</td>
+                      <td id="tier-2-total"></td>
+                  </tr>
+                  <tr>
+                      <td id="tier-3-units">0</td>
+                      <td>5.7</td>
+                      <td id="tier-3-total"></td>
+                  </tr>
+                  <tr>
+                      <td id="tier-4-units">0</td>
+                      <td>6.1</td>
+                      <td id="tier-4-total"></td>
+                  </tr>
+              </tbody>
+          </table>
+          <div class="row">
+              <label>Electricity Duty:</label>
+              <input type="number" id="electricity-duty" value="">
+          </div>
+          <div class="row">
+              <label>Total Electricity Charges:</label>
+              <span id="electricity-charges"></span>
+          </div>
+          <div class="row">
+              <label>Water Consumption Charges:</label>
+              <input type="number" id="water-charges" value="">
+          </div>
+          <div class="row">
+              <label>House Rent Charges:</label>
+              <input type="number" id="house-rent-charges" value="">
+          </div>
+          <div class="row">
+              <label>Other Charges / Deductions:</label>
+              <input type="number" id="other-charges" value="">
+          </div>
+          <div class="row total">
+              <label>Total Amount Payable:</label>
+              <span id="total-payable">0</span>
+          </div>
+          <div class="row">
+              <label>Amount Paid by Tenant:</label>
+              <input type="number" id="amount-paid">
+          </div>
+          <div class="row signature">
+              <span>Tenant's Signature</span>
+              <span>Owner's Signature</span>
+          </div>
+      </form>
+  </div>
+  </div>
+  <button id="download-btn">Download Receipt</button>
+    
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </body>
 </html>

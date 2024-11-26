@@ -69,3 +69,25 @@ document.getElementById('other-charges').addEventListener('input', updateTotalPa
 
 // Initialize
 updateUnitsConsumed();
+console.log(document.getElementById('tenant-name').innerText)
+
+//download receipt
+document.getElementById('download-btn').addEventListener('click', function () {
+  const receipt = document.getElementById('receipt'); // The receipt to capture
+
+  // Retrieve tenant's name and date from input fields
+  const tenantName = document.getElementById('tenant-name').value.trim() || 'Tenant';
+  const selectedDate = document.getElementById('date').value || new Date().toISOString().slice(0, 10); // Fallback to today's date if not entered
+
+  // Format the file name
+  const fileName = `${tenantName}-${selectedDate}.png`; // Example: JohnDoe-2024-11-26.png
+
+  // Use html2canvas to capture the receipt as an image
+  html2canvas(receipt).then(canvas => {
+    const link = document.createElement('a');
+    link.download = fileName; // Dynamic file name
+    link.href = canvas.toDataURL('image/png'); // Data URL of the canvas
+    link.click(); // Trigger the download
+  });
+});
+
